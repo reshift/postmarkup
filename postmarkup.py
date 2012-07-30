@@ -668,7 +668,7 @@ def create(include=None,
 
     add_tag(ParagraphTag, u"p")
     return postmarkup
-        
+
 
 # http://effbot.org/zone/python-replace.htm
 class MultiReplace:
