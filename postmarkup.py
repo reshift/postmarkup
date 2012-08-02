@@ -162,7 +162,6 @@ class SimpleTag(TagBase):
 
 
 class DivStyleTag(TagBase):
-
     """A simple tag that is replaces with a div and a style."""
 
     def __init__(self, name, style, value, **kwargs):
@@ -1543,10 +1542,10 @@ def _run_unittests():
             """Test links produce correct output"""
             postmarkup = create(annotate_links=False)
 
-            tests= [ ('[link=http://www.willmcgugan.com]blog1[/link]', '<a href="http://www.willmcgugan.com">blog1</a>'),
-                     ('[link="http://www.willmcgugan.com"]blog2[/link]', '<a href="http://www.willmcgugan.com">blog2</a>'),
-                     ('[link http://www.willmcgugan.com]blog3[/link]', '<a href="http://www.willmcgugan.com">blog3</a>'),
-                     ('[link]http://www.willmcgugan.com[/link]', '<a href="http://www.willmcgugan.com">http://www.willmcgugan.com</a>')
+            tests= [ ('[link=http://www.willmcgugan.com]blog1[/link]', '<a href="http://www.willmcgugan.com" rel="nofollow">blog1</a>'),
+                     ('[link="http://www.willmcgugan.com"]blog2[/link]', '<a href="http://www.willmcgugan.com" rel="nofollow">blog2</a>'),
+                     ('[link http://www.willmcgugan.com]blog3[/link]', '<a href="http://www.willmcgugan.com" rel="nofollow">blog3</a>'),
+                     ('[link]http://www.willmcgugan.com[/link]', '<a href="http://www.willmcgugan.com" rel="nofollow">http://www.willmcgugan.com</a>')
                      ]
 
             for test, result in tests:
