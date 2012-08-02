@@ -1289,6 +1289,7 @@ class PostMarkup(object):
         html = u"".join(text)
         if clean:
             html = self.cleanup_html(html)
+            html = html.strip()
         return html
 
     # A shortcut for render_to_html
