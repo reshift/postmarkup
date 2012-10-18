@@ -1187,11 +1187,11 @@ class PostMarkup(object):
 
             elif tag_type == TOKEN_TAG:
                 tag_token = tag_token[1:-1].lstrip()
-                if '=' in tag_token:
-                    tag_name, tag_attribs = tag_token.split(u'=', 1)
-                    tag_attribs = tag_attribs.strip()
-                elif ' ' in tag_token:
+                if ' ' in tag_token:
                     tag_name, tag_attribs = tag_token.split(u' ', 1)
+                    tag_attribs = tag_attribs.strip()
+                elif '=' in tag_token:
+                    tag_name, tag_attribs = tag_token.split(u'=', 1)
                     tag_attribs = tag_attribs.strip()
                 else:
                     tag_name = tag_token
