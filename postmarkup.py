@@ -976,6 +976,16 @@ class PostMarkup(object):
                     parts.append(post_markup[start_pos:end_pos])
                 else:
                     txt = post_markup[start_pos:end_pos]
+
+                    # Tmp replace double enter with tmp
+                    txt = txt.replace('\n\n', '\tmp')
+
+                    # Replace ONE enter with ONE br
+                    txt = txt.replace('\n', '<br/>')
+
+                    # replace the double enters back to the original status
+                    txt = txt.replace('\tmp', '\n\n')
+
                     txt = _re_break_groups.sub(u'[p]', txt)
                     parts.append(txt)
                 continue
